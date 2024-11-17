@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MechMinder - Transforming MEP Systems with AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #0A192F;
+            --medium-blue: #172A45;
+            --light-blue: #3A506B;
+            --accent: #64FFDA;
+            --text: #CCD6F6;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+        }
+        header nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover {
+            color: var(--text);
+        }
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 2px;
+            width: 0;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        header nav a:hover::after {
+            width: 100%;
+        }
+        section {
+            padding: 80px 10%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, var(--dark-blue), var(--medium-blue));
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .feature {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background: var(--medium-blue);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+            flex-basis: calc(33.333% - 40px);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .problem-solution {
+            display: flex;
+            justify-content: space-between;
+        }
+        .problem, .solution {
+            flex-basis: 48%;
+        }
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            background: var(--medium-blue);
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: var(--light-blue);
+        }
+        .faq-answer {
+            padding: 15px;
+            display: none;
+        }
+        footer {
+            background: var(--medium-blue);
+            padding: 20px 10%;
+            text-align: center;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: var(--dark-blue);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .cta-button:hover {
+            background-color: var(--text);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MechMinder</div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#problem-solution">Problem & Solution</a>
+                <a href="#faqs">FAQs</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Transforming MEP Systems with AI</h1>
+        <p>MechMinder embeds advanced AI and IoT insights into every stage—from design to long-term operation—tackling inefficiencies at their root.</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="about">
+        <h2>About MechMinder</h2>
+        <p>MechMinder transforms how mechanical, electrical, and plumbing (MEP) systems are designed, installed, and operated. By embedding advanced AI and IoT insights into every stage—from design to long-term operation—we tackle inefficiencies at their root.</p>
+        <h3>Who We Serve:</h3>
+        <ul>
+            <li>Building Owners: Cut operational costs and improve system reliability</li>
+            <li>Architects and Contractors: Design scalable, energy-efficient systems</li>
+            <li>Facilities Managers: Minimize downtime and optimize performance</li>
+        </ul>
+        <h3>Our Mission</h3>
+        <p>To set a new standard for MEP systems by combining AI-driven energy efficiency, adaptability, and sustainability into accessible solutions for projects of all sizes.</p>
+        <h3>Our Vision</h3>
+        <p>A future where every building operates with precision, reducing waste and maximizing efficiency.</p>
+    </section>
+
+    <section id="features" class="feature">
+        <div class="feature-card">
+            <h3>Lifecycle Optimization</h3>
+            <p>AI and IoT data seamlessly integrated throughout the building lifecycle for better performance and lower costs.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Advanced Real-Time Monitoring</h3>
+            <p>Continuous monitoring dynamically adapts systems to changing conditions, reducing inefficiencies and preventing costly downtime.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Sustainability and Scalability</h3>
+            <p>Solutions tailored for small to mid-sized projects, democratizing the energy savings and reliability traditionally reserved for large-scale developments.</p>
+        </div>
+    </section>
+
+    <section id="problem-solution" class="problem-solution">
+        <div class="problem">
+            <h2>The Problem We're Solving</h2>
+            <h3>Industry Challenges</h3>
+            <ul>
+                <li>Significant Energy Waste: Poorly designed and operated systems increase energy use by up to 30%, wasting billions annually.</li>
+                <li>High Operational Costs: Unplanned downtime and inefficiencies create avoidable maintenance expenses.</li>
+                <li>Lagging AI Adoption: Advanced AI remains underutilized in the $338 billion HVAC, leaving inefficiencies unchecked.</li>
+            </ul>
+        </div>
+        <div class="solution">
+            <h2>Our Solution</h2>
+            <ul>
+                <li>Lifecycle Integration: AI insights embedded across every stage, addressing inefficiencies from design to operation.</li>
+                <li>Disruptive Technology: Systems designed to adapt dynamically from day one, not just post-construction optimization.</li>
+                <li>Accessible Innovation: Scalable solutions bring cutting-edge technology to small and mid-sized projects.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="faqs" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q: How is MechMinder different from traditional solutions?</div>
+            <div class="faq-answer">MechMinder embeds AI and IoT insights throughout the building lifecycle, unlike competitors who focus solely on post-construction or isolated designs.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: Is my data safe with MechMinder?</div>
+            <div class="faq-answer">Yes, we use advanced encryption and comply with global data protection standards to ensure your data remains secure.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: Can MechMinder handle small projects?</div>
+            <div class="faq-answer">Absolutely. MechMinder's scalable solutions are designed to make advanced technology accessible to projects of all sizes.</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MechMinder. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {threshold: 0.1});
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
